@@ -58,3 +58,25 @@ filterBtn.forEach((btn, index) => {
         });
     });
 });
+
+// Add this to your existing script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Create modal container
+    const modal = document.createElement('div');
+    modal.className = 'certificate-modal';
+    document.body.appendChild(modal);
+
+    // Add click event to certificate previews
+    document.querySelectorAll('.certificate-preview').forEach(preview => {
+        preview.addEventListener('click', function() {
+            const imgSrc = this.querySelector('img').src;
+            modal.innerHTML = `<img src="${imgSrc}" alt="Certificate Full View">`;
+            modal.style.display = 'block';
+        });
+    });
+
+    // Close modal when clicked
+    modal.addEventListener('click', function() {
+        this.style.display = 'none';
+    });
+});
