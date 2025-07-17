@@ -80,3 +80,42 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.display = 'none';
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.contact-form form');
+    if (form) {
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                });
+
+                if (response.ok) {
+                    // Show a custom thank you message or clear the form
+                    form.reset();
+                    // You can show a message like this:
+                    let msg = document.createElement('p');
+                    msg.className = 'form-success';
+                    msg.textContent = 'Thank you! Your message has been sent.';
+                    form.appendChild(msg);
+                    setTimeout(() => {
+                        msg.remove();
+                    }, 3000);
+                } else {
+                    // Handle error
+                    alert('There was a problem submitting your form. Please try again.');
+                }
+            } catch (error) {
+                alert('There was a problem submitting your form. Please try again.');
+            }
+        });
+    }
+});

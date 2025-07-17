@@ -160,8 +160,7 @@
                                 <div class="author-info">
                                     <h4 class="author-name">Suraj Raj(co-founder @CarinaFashion)</h4>
                                 </div>
-                            </div>
-                        </div>    
+                            </div>    
                     </div>
                 </div> -->
 
@@ -1091,9 +1090,19 @@
             </div>
 
             <div class="contact-form">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeWOQtorDdY-vsXSsBeWInpploh06-MbXjEW8lyjChwKqGXoA/viewform?embedded=true" width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0" allowfullscreen>
-                    Loading…
-                </iframe>
+                <form action="https://formspree.io/f/mwpqkgpv" method="POST">
+                    <div class="form-grid">
+                        <div class="grid-left">
+                            <input type="text" name="name" required placeholder="Full Name" autocomplete="off">
+                            <input type="email" name="email" required placeholder="Email Address" autocomplete="off">
+                            <input type="text" name="subject" required placeholder="Subject" autocomplete="off">
+                        </div>
+                        <div class="grid-right">
+                            <textarea name="message" required placeholder="Your Message"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
             </div>
             
         </section>

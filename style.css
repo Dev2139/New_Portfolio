@@ -961,3 +961,74 @@ img{
     transform: translate(-50%, -50%);
 }
 
+.contact-info{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.contact-info .info-box{
+    background: var(--background-dark-80);
+    border: 1px solid var(--background-dark-70);
+    text-align: center;
+    padding: 25px;
+    transition: var(--transition-default);
+}
+
+.contact-info .info-box:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 10px -5px #0005;
+}
+
+.contact-info .info-box ion-icon{
+    font-size: var(--font-size-48);
+    color: var(--color-white-70);
+    margin-bottom: 10px;
+}
+
+.contact-info .info-box p{
+    font-size: var(--font-size-16);
+    font-weight: 600;
+    color: var(--color-white-95);
+}
+
+.contact-form{
+    max-width: 700px;
+    margin: auto;
+}
+
+.form-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-grid .grid-left input,
+.form-grid .grid-right textarea{
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--font-size-14);
+    color: var(--color-white-95);
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid var(--background-dark-70);
+    outline: none;
+}
+
+.form-grid .grid-left input:not(:last-child){margin-bottom: 20px;}
+
+.form-grid .grid-right textarea {
+    height: 170px;
+    resize: none;
+}
+
+
+.form-success {
+    color: green;
+    margin-top: 1em;
+    font-weight: bold;
+}
