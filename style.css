@@ -837,7 +837,7 @@ img{
 }
 
 .btn-primary {
-    background-color: #4A90E2;
+    /* background-color: #; */
     color: white;
 }
 
@@ -1032,3 +1032,6 @@ img{
     margin-top: 1em;
     font-weight: bold;
 }
+
+
+
