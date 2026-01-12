@@ -24,15 +24,36 @@ navItemLinks.forEach(link => {
         // Add active class to clicked link
         this.classList.add('active');
         
-        // Get the page name from link text
-        const pageName = this.textContent.toLowerCase();
+        // Get the target section ID from the href attribute
+        const targetId = this.getAttribute('href').substring(1); // Remove the '#'
         
         // Find and activate the corresponding page
-        pages.forEach(page => {
-            if (page.classList.contains(pageName)) {
-                page.classList.add('active');
-            }
-        });
+        const targetPage = document.getElementById(targetId);
+        if (targetPage) {
+            targetPage.classList.add('active');
+            
+            // Close sidebar if it's open (for mobile view)
+            sideBar.classList.remove('active');
+        }
+    });
+});
+
+// Update active link based on current section when scrolling
+window.addEventListener('scroll', function() {
+    let current = '';
+    
+    pages.forEach(page => {
+        if (page.classList.contains('active')) {
+            current = page.id;
+        }
+    });
+    
+    navItemLinks.forEach(link => {
+        link.classList.remove('active');
+        
+        if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+        }
     });
 });
 
