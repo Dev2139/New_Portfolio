@@ -67,7 +67,7 @@ This project is open source and available under the MIT License.
 - Email: dev.patel.codinggita@gmail.com
 - LinkedIn: [dev-patel2139](https://www.linkedin.com/in/dev-patel2139/)
 - GitHub: [Dev2139](https://github.com/Dev2139)
-- Portfolio: 
+- Portfolio: [devpatel-portfolioandcontacts](https://devpatel-portfolioandcontacts.netlify.app/)
 
 ---
 
