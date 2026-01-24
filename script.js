@@ -71,7 +71,14 @@ filterBtn.forEach((btn, index) => {
             const categoryText = item.textContent;
             const portfolioItem = item.parentElement;
             
-            if (this.textContent === 'All' || this.textContent === categoryText) {
+            // Hide Figma Designs and Documentation from "All" section
+            if (this.textContent === 'All') {
+                if (categoryText === 'Figma Designs' || categoryText === 'Documentation') {
+                    portfolioItem.classList.remove('active');
+                } else {
+                    portfolioItem.classList.add('active');
+                }
+            } else if (this.textContent === categoryText) {
                 portfolioItem.classList.add('active');
             } else {
                 portfolioItem.classList.remove('active');
